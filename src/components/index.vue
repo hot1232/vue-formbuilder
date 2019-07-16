@@ -5,7 +5,7 @@
         <Form :label-width="100" class="b-a">
           <draggable :clone="cloneData" :list="form_list" :options="dragOptions1">
             <transition-group class="form-list-group" type="transition" :name="'flip-list'" tag="div">
-              <renders v-for="(element,index) in form_list" :key="index" :ele="element.ele" :obj="element.obj || {}"></renders>
+              <renders v-for="(element,index) in form_list" :key="11+index" :ele="element.ele" :obj="element.obj || {}"></renders>
             </transition-group>
           </draggable>
         </Form>
@@ -15,13 +15,13 @@
           <Alert style="margin: 15px 15px 0;" type="warning" show-icon>未绑定数据字典控件无效</Alert>
           <draggable :list="sortable_item" :options="dragOptions2">
             <transition-group class="form-list-group" type="transition" :name="'flip-list'" tag="div">
-              <renders @handleRemoveEle="removeEle" @handleConfEle="confEle" @changeVisibility="changeVisibility" v-for="(element,index) in sortable_item" :key="index" :index="index" :ele="element.ele" :obj="element.obj || {}" :data="formData" @handleChangeVal="val => handleChangeVal(val,element)" :sortableItem="sortable_item" :config-icon="true">
+              <renders @handleRemoveEle="removeEle" @handleConfEle="confEle" @changeVisibility="changeVisibility" v-for="(element,index) in sortable_item" :key="12+index" :index="index" :ele="element.ele" :obj="element.obj || {}" :data="formData" @handleChangeVal="val => handleChangeVal(val,element)" :sortableItem="sortable_item" :config-icon="true">
               </renders>
             </transition-group>
           </draggable>
           <FormItem>
             <Button type="primary" @click="handleSubmit()">Submit</Button>
-            <Button type="ghost" @click="handleReset()" style="margin-left: 8px">Reset</Button>
+            <Button type="warning" @click="handleReset()" style="margin-left: 8px">Reset</Button>
           </FormItem>
         </Form>
       </i-col>
