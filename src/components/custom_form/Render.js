@@ -56,9 +56,15 @@ export default {
         //只渲染图标
         if (this.onlyIcon) {
             return h(
-                "div", {}, [
+                "Tag", {
+                    style: { marginBottom: '5px', width: "105px", position: "relative" },
+                    props: {
+                        padding: 2
+                    }
+                }, [
                     h("Icon", { style: { padding: "auto 5px auto" }, props: { type: this.obj.iconName, size: 20 }, }),
-                    this.$t(this.ele)
+                    h("span", { style: { marginLeft: '5px' } }, [this.$t(this.ele)])
+                    //this.$t(this.ele)
                 ]
             )
         }

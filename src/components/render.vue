@@ -4,8 +4,8 @@
     <renders v-for="(element,index) in template_form" :key="index" :index="index" :ele="element.ele" :obj="element.obj || {}" :data="formData" @handleChangeVal="val => handleChangeVal(val,element)" @changeVisibility="changeVisibility" :value="formData[element.obj.name]" :sortableItem="template_form">
     </renders>
     <FormItem>
-      <Button type="primary" @click="handleSubmit('formValidate')">Submit</Button>
-      <Button type="ghost" @click="handleReset('formValidate')" style="margin-left: 8px">Reset</Button>
+      <Button type="primary" @click="handleSubmit('formValidate')">{{$t("submit")}}</Button>
+      <Button type="warning" @click="handleReset('formValidate')" style="margin-left: 8px">{{$t("reset")}}</Button>
     </FormItem>
   </Form>
 </template>
@@ -37,6 +37,10 @@ export default {
     // 更改当前渲染字段是否显示
     changeVisibility(index, visibility) {
       this.$set(this.template_form[index].obj, 'visibility', visibility);
+    },
+    // 重置表格数据
+    handleReset(name){
+      this.$refs[name].resetFields()
     }
   },
   created() {

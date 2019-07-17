@@ -55,5 +55,8 @@ export default {
     cascader: '级联选择器',
     address: '地址',
     uploads: '上传',
-    Text: '文本框'
+    text: '文本框',
+    reset: '重置' ,
+    preview: '预览',
+    submit: '提交'
 }

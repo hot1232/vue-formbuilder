@@ -55,5 +55,8 @@ export default {
     cascader: 'Cascader',
     address: 'Address',
     uploads: 'Upload',
-    Text: 'Textarea'
+    text: 'Textarea',
+    reset: 'reset',
+    preview: 'Preview',
+    submit: 'submit'
 }
