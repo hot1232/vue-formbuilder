@@ -9,6 +9,9 @@ import cascaderMulti from 'cascader-multi';
 import iviewArea from 'iview-area';
 import custom_form from './components/custom_form';
 
+//i18n
+import i18n from './locale'
+
 import axios from 'axios';
 
 Vue.config.productionTip = false
@@ -22,8 +25,9 @@ Vue.prototype.$http = axios;
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
+    el: '#app',
+    router,
+    i18n,
+    components: { App },
+    template: '<App/>'
 })

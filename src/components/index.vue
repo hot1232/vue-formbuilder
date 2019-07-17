@@ -1,16 +1,26 @@
 <template>
   <div class="container">
-    <i-row>
-      <i-col span="12" class="sortable_container">
-        <Form :label-width="100" class="b-a">
+    <i-row gutter="10">
+      <i-col span="6" class="sortable_container">
+        <Card>
+          <p slot="title">
+            <Icon type="ios-apps-outline"></Icon>
+            {{ $t("components") }}
+        </p>
           <draggable :clone="cloneData" :list="form_list" :options="dragOptions1">
             <transition-group class="form-list-group" type="transition" :name="'flip-list'" tag="div">
-              <renders v-for="(element,index) in form_list" :key="11+index" :ele="element.ele" :obj="element.obj || {}"></renders>
+              <renders
+              v-for="(element,index) in form_list"
+              :key="11+index"
+              :ele="element.ele"
+              :obj="element.obj || {}"
+              onlyIcon
+              ></renders>
             </transition-group>
           </draggable>
-        </Form>
+        </Card>
       </i-col>
-      <i-col span="12" class="sortable_item">
+      <i-col span="18" class="sortable_item">
         <Form ref="formValidate" class="b-a" :label-width="100" :model="formData" @submit.native.prevent>
           <Alert style="margin: 15px 15px 0;" type="warning" show-icon>未绑定数据字典控件无效</Alert>
           <draggable :list="sortable_item" :options="dragOptions2">
@@ -300,6 +310,10 @@ export default {
       this.dataDict = d.data.items;
     });
     this.sortable_item = JSON.parse(localStorage.getItem('template_form') || '[]');
+
+    //1、这里需要通过路由将工单ID传过来
+    //2、并通过工单ID查询需要上传的字段列表
+    //3、初始化字段
   }
 };
 </script>
