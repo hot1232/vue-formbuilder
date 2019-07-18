@@ -11,8 +11,11 @@ import p from './control/P';
 import uploads from './control/Uploads';
 import datepicker from './control/DatePicker';
 import address from './control/Address';
+import row from './control/Row'
 
 import trigger from './config/trigger';
+
+import draggable from "vuedraggable";
 
 const form_item = {
     title,
@@ -27,6 +30,7 @@ const form_item = {
     address,
     uploads,
     text,
+    row,
 };
 
 const displayControl = (_self, sortableItem, name, value) => {
@@ -51,6 +55,9 @@ const displayControl = (_self, sortableItem, name, value) => {
 
 export default {
     name: 'renders',
+    components: {
+        draggable
+    },
     render(h) {
         var $this = this;
         //只渲染图标
