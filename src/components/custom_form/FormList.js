@@ -10,26 +10,28 @@ import { pConf } from "./control/P";
 import { uploadsConf } from './control/Uploads';
 import { datePickerConf } from './control/DatePicker'
 import { addressConf } from './control/Address';
+import { rowConf } from './control/Row'
 
 const formList = {
-  title: titleConf,
-  hr: hrConf,
-  p: pConf,
-  input: inputConf,
-  select: selectConf,
-  radio: radioConf,
-  checkbox: checkBoxConf,
-  datepicker: datePickerConf,
-  cascader: cascaderConf,
-  address: addressConf,
-  uploads: uploadsConf,
-  text: textConf,
+    title: titleConf,
+    hr: hrConf,
+    p: pConf,
+    input: inputConf,
+    select: selectConf,
+    radio: radioConf,
+    checkbox: checkBoxConf,
+    datepicker: datePickerConf,
+    cascader: cascaderConf,
+    address: addressConf,
+    uploads: uploadsConf,
+    text: textConf,
+    row: rowConf,
 };
 let list_arr = [];
 for (let i in formList) {
-  list_arr.push({
-    ele: i,
-    obj: formList[i]
-  });
+    list_arr.push({
+        ele: i,
+        obj: formList[i]
+    });
 }
 export default list_arr;

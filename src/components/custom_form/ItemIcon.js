@@ -5,7 +5,10 @@ export default (_self, h) => {
         icons.push(h('Icon', {
             props: {
                 type: 'ios-settings',
-                size: 18
+                size: 18,
+            },
+            style: {
+                marginBottom: '5px',
             },
             nativeOn: {
                 click() {
@@ -18,7 +21,10 @@ export default (_self, h) => {
     icons.push(h('Icon', {
         props: {
             type: 'ios-trash-outline',
-            size: 18
+            size: 18,
+        },
+        style: {
+            marginBottom: '5px',
         },
         nativeOn: {
             click() {
@@ -29,7 +35,8 @@ export default (_self, h) => {
     const item_icon = h('div', {
         class: {
             'item-icon': true
-        }
+        },
+        style: {}
     }, icons);
     return item_icon;
 }

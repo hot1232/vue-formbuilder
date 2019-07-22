@@ -21,9 +21,16 @@
         </Card>
       </i-col>
       <i-col span="18" class="sortable_item">
+        <Card>
         <Modal
         :value=true
         :mask=false
+        :width=74.7
+        :styles="{
+          marginLeft:'25.3%',
+          marginTop:'10px'
+        }"
+        :transfer=false
         >
           <Form ref="formValidate" class="b-a" :label-width="100" :model="formData" @submit.native.prevent>
             <Alert style="margin: 15px 15px 0;" type="warning" show-icon>未绑定数据字典控件无效</Alert>
@@ -39,6 +46,7 @@
               <Button type="warning" @click="handleReset()" style="margin-left: 8px">{{$t("reset")}}</Button>
           </div>
         </Modal>
+        </Card>
       </i-col>
       <Modal v-model="showModal" :title="'配置' + modalFormData.modalTitle + '属性'" :mask-closable="false">
         <Form class="form_content" :label-width="80" :model="modalFormData" ref="modalFormData">
